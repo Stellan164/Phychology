@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="icon" href="/static/image/favicon.ico" type="image/x-icon">
+    <title>AuroraPsych | 登录/注册</title>
+</head>
+<body>
+    <div class="box">
+        <!-- 滑动盒子 -->
+        <div class="pre-box">
+            <h1>WELCOME</h1>
+            <p>JOIN US!</p>
+            <div class="img-box">
+                <img src="/static/image/cat.jpg" alt="Welcome Image">
+            </div>
+        </div>
+        <!-- 注册盒子 -->
+        <div class="register-form">
+            <div class="title-box">
+                <h1>注册</h1>
+            </div>
+            <div class="input-box">
+                <input type="text" id="reg-username" placeholder="用户名" required>
+                <input type="password" id="reg-password" placeholder="密码" required>
+                <input type="password" id="reg-confirm-password" placeholder="确认密码" required>
+            </div>
+            <div class="btn-box">
+                <button onclick="register()">注册</button>
+                <p onclick="switchForm()">已有账号?去登录</p>
+            </div>
+        </div>
+        <!-- 登录盒子 -->
+        <div class="login-form">
+            <div class="title-box">
+                <h1>登录</h1>
+            </div>
+            <div class="input-box">
+                <input type="text" id="login-username" placeholder="用户名" required>
+                <input type="password" id="login-password" placeholder="密码" required>
+                <input type="text" id="login-activation-code" placeholder="激活码" required>
+            </div>
+            <div class="btn-box">
+                <button onclick="login()">登录</button>
+                <p onclick="switchForm()">没有账号?去注册</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载状态 -->
+    <div class="loading" id="loading">加载中...</div>
+
+    <script src="/static/Js/login.js"></script>
+
+</body>
+</html>

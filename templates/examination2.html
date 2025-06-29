@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraPsych | Stroop实验</title>
+    <link rel="icon" href="/static/image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/examination2.css">
+</head>
+<body>
+    <div class="container">
+        <div id="phase-indicator" class="phase-indicator">准备阶段</div>
+        <h1>Stroop实验</h1>
+        <div id="login-prompt"></div>
+        <div id="error-message" class="message"></div>
+
+        <div id="instructions">
+            <p>在这个实验中，您将看到用不同颜色书写的颜色名称。</p>
+            <p>请根据文字的实际颜色（而不是文字的含义）判断颜色与文字是否一致。</p>
+        </div>
+
+        <div class="counter">
+            <div class="nums">
+                <span>3</span>
+                <span>2</span>
+                <span>1</span>
+            </div>
+        </div>
+
+        <div id="stimulus"></div>
+
+        <div id="training-progress"></div>
+
+        <div id="response-buttons">
+            <button id="consistent-btn">颜色与文字一致</button>
+            <button id="inconsistent-btn">颜色与文字不一致</button>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-value" id="correct-count">0</div>
+                <div class="stat-label">正确</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="incorrect-count">0</div>
+                <div class="stat-label">错误</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="average-rt">0</div>
+                <div class="stat-label">平均反应时(ms)</div>
+            </div>
+        </div>
+
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <button id="start-button" disabled>开始实验</button>
+        <button id="next-group-button">下一组</button>
+        <button id="start-training-button" style="display: none;">开始训练</button>
+
+        <div id="results"></div>
+    </div>
+
+    <!-- 训练说明模态框 -->
+    <div id="training-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>训练阶段说明</h2>
+            <div id="training-instructions">
+                <p>接下来您将进行<span class="highlight">30次训练试验</span>，帮助您熟悉实验流程。</p>
+                <p>在训练阶段：</p>
+                <ul>
+                    <li>您会看到用不同颜色书写的颜色名称</li>
+                    <li>需要快速判断<span class="highlight">文字颜色是否与文字含义一致</span></li>
+                    <li>每次试验有时间限制，请尽快反应</li>
+                    <li>训练结果不会被记录，仅用于熟悉实验</li>
+                </ul>
+                <p>完成训练后，将开始正式实验。</p>
+            </div>
+            <button id="confirm-training-button">开始训练</button>
+        </div>
+    </div>
+
+    <!-- 组报告模态框 -->
+    <div id="group-report-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-report-modal-btn" class="close-modal">&times;</span>
+            <div id="group-report-content"></div>
+            <div class="modal-buttons">
+                <button id="close-report-modal-btn">关闭</button>
+                <button id="continue-experiment-btn">继续实验</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/Js/examination2.js"></script>
+</body>
+</html>

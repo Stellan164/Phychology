@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraPych | 心理测验平台</title>
+    <link rel="icon" href="/static/image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/navigation.css">
+</head>
+<body>
+    <!-- 装饰元素 -->
+    <div class="decorative-element"></div>
+    <div class="decorative-element"></div>
+
+    <!-- 视频背景容器 -->
+    <div class="video-container">
+        <video id="video1" class="video-bg active" muted loop autoplay>
+            <source src="/static/video/cat1.mp4" type="video/mp4">
+        </video>
+        <video id="video2" class="video-bg" muted loop>
+            <source src="/static/video/cat2.mp4" type="video/mp4">
+        </video>
+        <video id="video3" class="video-bg" muted loop>
+            <source src="/static/video/cat3.mp4" type="video/mp4">
+        </video>
+        <video id="video4" class="video-bg" muted loop>
+            <source src="/static/video/cat4.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- 顶部导航栏 -->
+    <div class="navbar">
+        <span>AuroraPych 心理测验平台</span>
+        <a id="reportBtn" onclick="viewReport()">查看测试报告</a>
+    </div>
+
+    <!-- 主导航菜单 -->
+    <nav>
+        <a href="{{ url_for('examination1') }}" data-quiz="examination1" class="quiz-link">测试一</a>
+        <a href="{{ url_for('examination2') }}" data-quiz="examination2" class="quiz-link">测试二</a>
+        <div class="animation"></div>
+    </nav>
+
+    <!-- 报告弹窗 -->
+    <div id="reportModal">
+        <button class="close-btn" onclick="closeReport()">×</button>
+        <h2 id="reportTitle">测试报告</h2>
+        <div id="reportContent"></div>
+    </div>
+
+    <!-- 遮罩层 -->
+    <div id="overlay" class="overlay"></div>
+    <script src="/static/Js/navigation.js"></script>
+</body>
+</html>

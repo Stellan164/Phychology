@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>AuroraPsych | CPT测验</title>
+    <link href="/static/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/examination1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="phase-indicator" id="phase-indicator">准备阶段</div>
+        <h1>持续性操作测试(CPT)</h1>
+        <div class="message" id="error-message"></div>
+
+        <div id="stimulus-container"></div>
+
+        <div id="controls">
+            <button id="startButton">开始挑战</button>
+            <button disabled id="responseButton">点击响应</button>
+        </div>
+
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-value" id="hit-count">0</div>
+                <div class="stat-label">正确检测</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="miss-count">0</div>
+                <div class="stat-label">漏报</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="false-alarm-count">0</div>
+                <div class="stat-label">虚报</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value" id="average-rt">0</div>
+                <div class="stat-label">平均反应时(ms)</div>
+            </div>
+        </div>
+
+        <div id="results"></div>
+        <div class="feedback" id="feedback"></div>
+    </div>
+
+    <!-- 指令模态框 -->
+    <div class="modal" id="instructionModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>持续性操作测试(CPT)</h2>
+            <div id="instructions">
+                <p>在这个测试中，您将看到一系列字母和数字快速闪现。</p>
+                <ul>
+                    <li>当您看到数字 <strong>"9"</strong> 时，请尽可能快地点击按钮</li>
+                    <li>对其他所有刺激不做反应</li>
+                    <li>请集中注意力，测试将持续几分钟</li>
+                </ul>
+                <p>首先将进行简短的练习，然后是正式测试。</p>
+            </div>
+            <button id="confirm-instruction-button">开始练习</button>
+            <script src="/static/Js/examination1.js"></script>
+        </div>
+    </div>
+</body>
+</html>
